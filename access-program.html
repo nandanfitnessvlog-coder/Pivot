@@ -1,0 +1,1048 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Access Program — Pivot Aide | Premium Bookkeeping & Odoo ERP</title>
+    <meta name="description" content="Apply for the Pivot Aide Access Program and get the Foundation Package for qualifying small businesses starting at $599/month.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,300;0,14..32,400;0,14..32,500;0,14..32,600;0,14..32,700;0,14..32,800;0,14..32,900;1,14..32,400&family=Instrument+Serif:ital@1&family=Playfair+Display:ital,wght@0,400..700;1,400..700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css?v=2.6">
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+    <link rel="shortcut icon" href="favicon.ico">
+    <style>
+        /* local styles for contact form inputs focus and styling */
+        .form-input:focus {
+            border-color: #EAE42F !important;
+            box-shadow: 0 0 0 2px rgba(234, 228, 47, 0.2) !important;
+            outline: none;
+        }
+        .contact-info-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border-light);
+            border-radius: var(--card-radius);
+            padding: 28px 24px;
+            display: flex;
+            gap: 16px;
+            align-items: flex-start;
+            transition: all 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+            box-shadow: 0 4px 18px rgba(11, 28, 43, 0.02);
+        }
+        .contact-info-card:hover {
+            border-color: rgba(138, 109, 37, 0.3);
+            background: var(--bg-card);
+            box-shadow: 0 16px 36px rgba(11, 28, 43, 0.06);
+            transform: translateY(-3px);
+        }
+        .cic-icon {
+            font-size: 20px;
+            color: var(--yellow);
+            background: rgba(234, 228, 47, 0.05);
+            border: 1px solid rgba(234, 228, 47, 0.15);
+            border-radius: 8px;
+            width: 40px;
+            height: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+        }
+        .cic-details h4 {
+            font-size: 14px;
+            font-weight: 700;
+            color: var(--text-primary);
+            margin: 0 0 4px;
+        }
+        .cic-details p {
+            font-size: 13px;
+            color: var(--text-secondary);
+            margin: 0;
+            line-height: 1.5;
+        }
+        .cic-details a {
+            color: var(--yellow);
+            text-decoration: none;
+        }
+        .btn-pill-submit {
+            background: #0B1C2B;
+            color: #ffffff;
+            border: 1px solid rgba(255,255,255,0.1);
+            border-radius: 30px;
+            padding: 14px 28px;
+            font-size: 14px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 100%;
+        }
+        .btn-pill-submit:hover {
+            background: #153047;
+            border-color: var(--yellow);
+            transform: translateY(-2px);
+        }
+        .btn-pill-submit:disabled {
+            opacity: 0.6;
+            cursor: not-allowed;
+            transform: none;
+        }
+        
+        /* Hero Visual Dashboard Widget */
+        .hero-consult-visual {
+            background: rgba(11, 28, 43, 0.4);
+            border: 1px solid var(--border-light);
+            border-radius: var(--card-radius);
+            padding: 28px;
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.3);
+            text-align: left;
+        }
+        .hcv-header {
+            border-bottom: 1px solid var(--border-light);
+            padding-bottom: 14px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .hcv-header strong {
+            font-size: 13px;
+            color: var(--text-primary);
+            text-transform: uppercase;
+            letter-spacing: var(--ls-caps);
+        }
+        .hcv-status {
+            font-size: 10px;
+            color: var(--yellow);
+            background: rgba(234, 228, 47, 0.08);
+            border: 1px solid rgba(234, 228, 47, 0.25);
+            padding: 4px 10px;
+            border-radius: 12px;
+            font-weight: 700;
+        }
+        .hcv-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 13px;
+        }
+        .hcv-label { color: var(--text-secondary); }
+        .hcv-val { font-weight: 700; color: var(--text-primary); }
+    </style>
+</head>
+<body>
+<div class="scroll-progress-bar" id="scrollProgress"></div>
+
+<!-- NAVBAR -->
+<nav class="navbar" id="navbar">
+    <div class="nav-container">
+        <a href="index.html" class="nav-logo" id="navLogo">
+            <div class="logo-mark"><img src="logo_image.jpg" alt="Pivot Aide Logo" style="width: 36px; height: 36px; border-radius: 9px; object-fit: cover; display: block;"></div>
+            <span class="logo-wordmark">Pivot<span class="logo-accent">Aide</span></span>
+        </a>
+        <div class="nav-links" id="navLinks">
+            <a href="index.html" class="nav-link">Home</a>
+            <a href="about.html" class="nav-link">About</a>
+            <a href="accounting.html" class="nav-link">Accounting</a>
+            <a href="odoo.html" class="nav-link">Odoo ERP</a>
+            <a href="funding.html" class="nav-link">Funding</a>
+            <a href="contact.html" class="nav-link">Contact</a>
+        </div>
+        <div class="nav-actions">
+            <a href="contact.html" class="btn-ghost-nav">Sign In</a>
+            <a href="contact.html" class="btn-primary-nav">Get Started</a>
+        </div>
+        <button class="mobile-menu-toggle" id="mobileToggle" aria-label="Toggle menu"><span></span><span></span><span></span></button>
+    </div>
+</nav>
+
+<!-- MOBILE DRAWER -->
+<div class="mobile-menu" id="mobileMenu">
+    <div class="mobile-menu-links">
+        <a href="index.html" class="mobile-link">Home</a>
+        <a href="about.html" class="mobile-link">About</a>
+        <a href="accounting.html" class="mobile-link">Accounting</a>
+        <a href="odoo.html" class="mobile-link">Odoo ERP</a>
+        <a href="funding.html" class="mobile-link">Funding Readiness</a>
+        <a href="contact.html" class="mobile-link">Contact</a>
+    </div>
+    <div class="mobile-cta"><a href="contact.html" class="btn-primary btn-lg" style="width:100%;justify-content:center;">Schedule a Consultation</a></div>
+</div>
+
+<!-- HERO SECTION -->
+<section class="page-hero centered">
+    <div class="page-hero-bg">
+        <video autoplay loop muted playsinline class="page-hero-bg-video">
+            <source src="Contact/contact_animation.mp4" type="video/mp4">
+        </video>
+        <div class="page-hero-orb page-hero-orb-1"></div>
+        <div class="page-hero-orb page-hero-orb-2"></div>
+        <div class="page-hero-grid"></div>
+        <div class="page-hero-overlay"></div>
+    </div>
+    <div class="container">
+        <div class="page-hero-wrapper">
+            <div class="page-hero-content">
+                <div class="page-hero-eyebrow animate-fade-in-up delay-100"><span class="page-hero-eyebrow-dot"></span>Access Program</div>
+                <h1 class="page-hero-title animate-fade-in-up delay-200">Pivot Aide<br>Access <em class="serif-italic">Program</em></h1>
+                <p class="page-hero-sub animate-fade-in-up delay-300">The Pivot Aide Access Program provides qualifying small businesses with our essential bookkeeping, compliance, and accounting infrastructure services at a reduced rate to help them build a strong foundation for growth.</p>
+                <div class="page-hero-actions animate-fade-in-up delay-400">
+                    <a href="#contact-portal" class="btn-primary btn-lg">Apply Below →</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- CONTACT SECTION & INQUIRY FORM -->
+<section class="content-section light" id="contact-portal">
+    <div class="container" style="max-width: 960px;">
+        <!-- Program Application Banner -->
+        <div class="scroll-reveal" style="text-align: center; margin-bottom: 40px;">
+            <div class="section-tag" style="margin-bottom: 12px;"><span class="section-tag-dot"></span>Access Program Application</div>
+            <h2 class="section-title" style="margin-bottom: 8px;">Pivot Aide Access Program <em class="serif-italic">Application</em></h2>
+            <p style="font-size: 20px; color: var(--yellow); font-weight: 600; font-family: var(--font-serif); font-style: italic; margin-bottom: 6px;">Foundation Package — Starting at $599/month</p>
+            <p style="font-size: 14px; color: var(--text-secondary); font-style: italic; margin-bottom: 24px;">For qualifying small business clients applying for discounted accounting support</p>
+            
+            <div style="background: rgba(216, 183, 74, 0.03); border: 1px solid rgba(216, 183, 74, 0.2); border-radius: var(--card-radius); padding: 24px 32px; text-align: left; line-height: 1.6; font-size: 13.5px; color: var(--text-secondary); box-shadow: 0 10px 30px rgba(0,0,0,0.02);">
+                <strong style="color: var(--text-primary); display: block; margin-bottom: 6px;">Program Notice:</strong>
+                Thank you for your interest in the Pivot Aide Access Program. This program is designed to provide discounted accounting support to qualifying small businesses that need reliable financial systems, compliance support, and growth-ready bookkeeping. Completion of this application does not guarantee approval. Applications are reviewed based on business needs, current financial condition, service requirements, and program availability.
+            </div>
+        </div>
+
+        <!-- Inquiry Form -->
+        <div class="cta-form-card scroll-reveal" style="background: var(--bg-card); border: 1px solid var(--border-light); box-shadow: 0 20px 50px rgba(11,28,43,0.06); padding: 48px; border-radius: var(--card-radius);">
+            <form id="accessProgramForm" novalidate style="display:flex; flex-direction:column; gap:36px;">
+                
+                <!-- SECTION 1: BUSINESS INFORMATION -->
+                <div style="display:flex; flex-direction:column; gap:20px;">
+                    <h3 style="font-size: 18px; font-weight: 700; color: var(--text-primary); border-bottom: 1px solid var(--border-light); padding-bottom: 10px; margin: 0;">1. Business Information</h3>
+                    
+                    <div style="display:grid; grid-template-columns: 1fr 1fr; gap: 20px;">
+                        <div class="form-field" style="display:flex; flex-direction:column; gap:6px;">
+                            <label style="font-size:12px; font-weight:600; color:var(--text-secondary);">Legal Business Name *</label>
+                            <input type="text" name="legal_business_name" class="form-input" style="background: rgba(11,28,43,0.02); color: var(--text-primary); border-color: var(--border-light); padding: 12px 16px; border-radius: 8px; font-size: 13px;" required>
+                        </div>
+                        <div class="form-field" style="display:flex; flex-direction:column; gap:6px;">
+                            <label style="font-size:12px; font-weight:600; color:var(--text-secondary);">DBA / Trade Name</label>
+                            <input type="text" name="dba_name" class="form-input" style="background: rgba(11,28,43,0.02); color: var(--text-primary); border-color: var(--border-light); padding: 12px 16px; border-radius: 8px; font-size: 13px;">
+                        </div>
+                    </div>
+
+                    <div style="display:grid; grid-template-columns: 1.5fr 1fr; gap: 20px;">
+                        <div class="form-field" style="display:flex; flex-direction:column; gap:6px;">
+                            <label style="font-size:12px; font-weight:600; color:var(--text-secondary);">Business Address *</label>
+                            <input type="text" name="business_address" class="form-input" style="background: rgba(11,28,43,0.02); color: var(--text-primary); border-color: var(--border-light); padding: 12px 16px; border-radius: 8px; font-size: 13px;" required>
+                        </div>
+                        <div class="form-field" style="display:flex; flex-direction:column; gap:6px;">
+                            <label style="font-size:12px; font-weight:600; color:var(--text-secondary);">City, State, ZIP *</label>
+                            <input type="text" name="city_state_zip" class="form-input" style="background: rgba(11,28,43,0.02); color: var(--text-primary); border-color: var(--border-light); padding: 12px 16px; border-radius: 8px; font-size: 13px;" required>
+                        </div>
+                    </div>
+
+                    <div style="display:grid; grid-template-columns: 1fr 1fr; gap: 20px;">
+                        <div class="form-field" style="display:flex; flex-direction:column; gap:6px;">
+                            <label style="font-size:12px; font-weight:600; color:var(--text-secondary);">Business Phone Number *</label>
+                            <input type="tel" name="business_phone" class="form-input" style="background: rgba(11,28,43,0.02); color: var(--text-primary); border-color: var(--border-light); padding: 12px 16px; border-radius: 8px; font-size: 13px;" required>
+                        </div>
+                        <div class="form-field" style="display:flex; flex-direction:column; gap:6px;">
+                            <label style="font-size:12px; font-weight:600; color:var(--text-secondary);">Business Email Address *</label>
+                            <input type="email" name="business_email" class="form-input" style="background: rgba(11,28,43,0.02); color: var(--text-primary); border-color: var(--border-light); padding: 12px 16px; border-radius: 8px; font-size: 13px;" required>
+                        </div>
+                    </div>
+
+                    <div style="display:grid; grid-template-columns: 1.5fr 1fr; gap: 20px;">
+                        <div class="form-field" style="display:flex; flex-direction:column; gap:6px;">
+                            <label style="font-size:12px; font-weight:600; color:var(--text-secondary);">Business Website / Social Media</label>
+                            <input type="text" name="business_website" class="form-input" style="background: rgba(11,28,43,0.02); color: var(--text-primary); border-color: var(--border-light); padding: 12px 16px; border-radius: 8px; font-size: 13px;" placeholder="e.g., https://mybusiness.com">
+                        </div>
+                        <div class="form-field" style="display:flex; flex-direction:column; gap:6px;">
+                            <label style="font-size:12px; font-weight:600; color:var(--text-secondary);">Year Business Started *</label>
+                            <input type="number" name="year_started" class="form-input" style="background: rgba(11,28,43,0.02); color: var(--text-primary); border-color: var(--border-light); padding: 12px 16px; border-radius: 8px; font-size: 13px;" required min="1800" max="2026">
+                        </div>
+                    </div>
+
+                    <div class="form-field" style="display:flex; flex-direction:column; gap:6px;">
+                        <label style="font-size:12px; font-weight:600; color:var(--text-secondary);">Industry / Type of Business *</label>
+                        <input type="text" name="industry_type" class="form-input" style="background: rgba(11,28,43,0.02); color: var(--text-primary); border-color: var(--border-light); padding: 12px 16px; border-radius: 8px; font-size: 13px;" placeholder="e.g., Retail, Manufacturing, Consulting" required>
+                    </div>
+
+                    <div class="form-field" style="display:flex; flex-direction:column; gap:8px;">
+                        <label style="font-size:12px; font-weight:600; color:var(--text-secondary);">Entity Type *</label>
+                        <div style="display:grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 12px; background: rgba(11,28,43,0.015); border: 1px solid var(--border-light); border-radius: 8px; padding: 16px; transition: all 0.3s ease;">
+                            <label style="display:flex; align-items:center; gap:8px; font-size:12.5px; color:var(--text-primary); cursor:pointer;">
+                                <input type="radio" name="entity_type" value="Sole Proprietor" required style="accent-color: var(--yellow);"> Sole Proprietor
+                            </label>
+                            <label style="display:flex; align-items:center; gap:8px; font-size:12.5px; color:var(--text-primary); cursor:pointer;">
+                                <input type="radio" name="entity_type" value="LLC" style="accent-color: var(--yellow);"> LLC
+                            </label>
+                            <label style="display:flex; align-items:center; gap:8px; font-size:12.5px; color:var(--text-primary); cursor:pointer;">
+                                <input type="radio" name="entity_type" value="Partnership" style="accent-color: var(--yellow);"> Partnership
+                            </label>
+                            <label style="display:flex; align-items:center; gap:8px; font-size:12.5px; color:var(--text-primary); cursor:pointer;">
+                                <input type="radio" name="entity_type" value="S-Corporation" style="accent-color: var(--yellow);"> S-Corporation
+                            </label>
+                            <label style="display:flex; align-items:center; gap:8px; font-size:12.5px; color:var(--text-primary); cursor:pointer;">
+                                <input type="radio" name="entity_type" value="C-Corporation" style="accent-color: var(--yellow);"> C-Corporation
+                            </label>
+                            <label style="display:flex; align-items:center; gap:8px; font-size:12.5px; color:var(--text-primary); cursor:pointer;">
+                                <input type="radio" name="entity_type" value="Nonprofit" style="accent-color: var(--yellow);"> Nonprofit
+                            </label>
+                            <label style="display:flex; align-items:center; gap:8px; font-size:12.5px; color:var(--text-primary); cursor:pointer; grid-column: 1 / -1;">
+                                <input type="radio" name="entity_type" value="Other" style="accent-color: var(--yellow);"> Other:
+                                <input type="text" name="entity_type_other" class="form-input" style="flex:1; background: rgba(11,28,43,0.02); color: var(--text-primary); border-color: var(--border-light); padding: 4px 8px; border-radius: 4px; font-size: 12px; margin-left: 8px;">
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="form-field" style="display:flex; flex-direction:column; gap:8px;">
+                        <label style="font-size:12px; font-weight:600; color:var(--text-secondary);">Number of Employees *</label>
+                        <div style="display:flex; flex-wrap: wrap; gap: 20px; background: rgba(11,28,43,0.015); border: 1px solid var(--border-light); border-radius: 8px; padding: 16px; transition: all 0.3s ease;">
+                            <label style="display:flex; align-items:center; gap:8px; font-size:12.5px; color:var(--text-primary); cursor:pointer;">
+                                <input type="radio" name="employees" value="0" required style="accent-color: var(--yellow);"> 0
+                            </label>
+                            <label style="display:flex; align-items:center; gap:8px; font-size:12.5px; color:var(--text-primary); cursor:pointer;">
+                                <input type="radio" name="employees" value="1-5" style="accent-color: var(--yellow);"> 1–5
+                            </label>
+                            <label style="display:flex; align-items:center; gap:8px; font-size:12.5px; color:var(--text-primary); cursor:pointer;">
+                                <input type="radio" name="employees" value="6-10" style="accent-color: var(--yellow);"> 6–10
+                            </label>
+                            <label style="display:flex; align-items:center; gap:8px; font-size:12.5px; color:var(--text-primary); cursor:pointer;">
+                                <input type="radio" name="employees" value="11-25" style="accent-color: var(--yellow);"> 11–25
+                            </label>
+                            <label style="display:flex; align-items:center; gap:8px; font-size:12.5px; color:var(--text-primary); cursor:pointer;">
+                                <input type="radio" name="employees" value="26+" style="accent-color: var(--yellow);"> 26+
+                            </label>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- SECTION 2: OWNER / PRIMARY CONTACT INFORMATION -->
+                <div style="display:flex; flex-direction:column; gap:20px;">
+                    <h3 style="font-size: 18px; font-weight: 700; color: var(--text-primary); border-bottom: 1px solid var(--border-light); padding-bottom: 10px; margin: 0;">2. Owner / Primary Contact Information</h3>
+                    
+                    <div style="display:grid; grid-template-columns: 1fr 1fr; gap: 20px;">
+                        <div class="form-field" style="display:flex; flex-direction:column; gap:6px;">
+                            <label style="font-size:12px; font-weight:600; color:var(--text-secondary);">Full Name *</label>
+                            <input type="text" name="owner_name" class="form-input" style="background: rgba(11,28,43,0.02); color: var(--text-primary); border-color: var(--border-light); padding: 12px 16px; border-radius: 8px; font-size: 13px;" required>
+                        </div>
+                        <div class="form-field" style="display:flex; flex-direction:column; gap:6px;">
+                            <label style="font-size:12px; font-weight:600; color:var(--text-secondary);">Title / Role *</label>
+                            <input type="text" name="owner_title" class="form-input" style="background: rgba(11,28,43,0.02); color: var(--text-primary); border-color: var(--border-light); padding: 12px 16px; border-radius: 8px; font-size: 13px;" required>
+                        </div>
+                    </div>
+
+                    <div style="display:grid; grid-template-columns: 1fr 1fr; gap: 20px;">
+                        <div class="form-field" style="display:flex; flex-direction:column; gap:6px;">
+                            <label style="font-size:12px; font-weight:600; color:var(--text-secondary);">Phone Number *</label>
+                            <input type="tel" name="owner_phone" class="form-input" style="background: rgba(11,28,43,0.02); color: var(--text-primary); border-color: var(--border-light); padding: 12px 16px; border-radius: 8px; font-size: 13px;" required>
+                        </div>
+                        <div class="form-field" style="display:flex; flex-direction:column; gap:6px;">
+                            <label style="font-size:12px; font-weight:600; color:var(--text-secondary);">Email Address *</label>
+                            <input type="email" name="owner_email" class="form-input" style="background: rgba(11,28,43,0.02); color: var(--text-primary); border-color: var(--border-light); padding: 12px 16px; border-radius: 8px; font-size: 13px;" required>
+                        </div>
+                    </div>
+
+                    <div class="form-field" style="display:flex; flex-direction:column; gap:8px;">
+                        <label style="font-size:12px; font-weight:600; color:var(--text-secondary);">Preferred Method of Contact *</label>
+                        <div style="display:flex; flex-wrap: wrap; gap: 20px; background: rgba(11,28,43,0.015); border: 1px solid var(--border-light); border-radius: 8px; padding: 16px; transition: all 0.3s ease;">
+                            <label style="display:flex; align-items:center; gap:8px; font-size:12.5px; color:var(--text-primary); cursor:pointer;">
+                                <input type="radio" name="contact_method" value="Phone" required style="accent-color: var(--yellow);"> Phone
+                            </label>
+                            <label style="display:flex; align-items:center; gap:8px; font-size:12.5px; color:var(--text-primary); cursor:pointer;">
+                                <input type="radio" name="contact_method" value="Email" style="accent-color: var(--yellow);"> Email
+                            </label>
+                            <label style="display:flex; align-items:center; gap:8px; font-size:12.5px; color:var(--text-primary); cursor:pointer;">
+                                <input type="radio" name="contact_method" value="Text" style="accent-color: var(--yellow);"> Text
+                            </label>
+                            <label style="display:flex; align-items:center; gap:8px; font-size:12.5px; color:var(--text-primary); cursor:pointer;">
+                                <input type="radio" name="contact_method" value="Video Call" style="accent-color: var(--yellow);"> Video Call
+                            </label>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- SECTION 3: BUSINESS FINANCIAL INFORMATION -->
+                <div style="display:flex; flex-direction:column; gap:20px;">
+                    <h3 style="font-size: 18px; font-weight: 700; color: var(--text-primary); border-bottom: 1px solid var(--border-light); padding-bottom: 10px; margin: 0;">3. Business Financial Information</h3>
+                    
+                    <div class="form-field" style="display:flex; flex-direction:column; gap:8px;">
+                        <label style="font-size:12px; font-weight:600; color:var(--text-secondary);">Approximate Monthly Revenue *</label>
+                        <div style="display:grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 12px; background: rgba(11,28,43,0.015); border: 1px solid var(--border-light); border-radius: 8px; padding: 16px; transition: all 0.3s ease;">
+                            <label style="display:flex; align-items:center; gap:8px; font-size:12.5px; color:var(--text-primary); cursor:pointer;">
+                                <input type="radio" name="monthly_revenue" value="Under $5,000" required style="accent-color: var(--yellow);"> Under $5,000
+                            </label>
+                            <label style="display:flex; align-items:center; gap:8px; font-size:12.5px; color:var(--text-primary); cursor:pointer;">
+                                <input type="radio" name="monthly_revenue" value="$5,000–$10,000" style="accent-color: var(--yellow);"> $5,000–$10,000
+                            </label>
+                            <label style="display:flex; align-items:center; gap:8px; font-size:12.5px; color:var(--text-primary); cursor:pointer;">
+                                <input type="radio" name="monthly_revenue" value="$10,001–$25,000" style="accent-color: var(--yellow);"> $10,001–$25,000
+                            </label>
+                            <label style="display:flex; align-items:center; gap:8px; font-size:12.5px; color:var(--text-primary); cursor:pointer;">
+                                <input type="radio" name="monthly_revenue" value="$25,001–$50,000" style="accent-color: var(--yellow);"> $25,001–$50,000
+                            </label>
+                            <label style="display:flex; align-items:center; gap:8px; font-size:12.5px; color:var(--text-primary); cursor:pointer;">
+                                <input type="radio" name="monthly_revenue" value="$50,001–$100,000" style="accent-color: var(--yellow);"> $50,001–$100,000
+                            </label>
+                            <label style="display:flex; align-items:center; gap:8px; font-size:12.5px; color:var(--text-primary); cursor:pointer;">
+                                <input type="radio" name="monthly_revenue" value="Over $100,000" style="accent-color: var(--yellow);"> Over $100,000
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="form-field" style="display:flex; flex-direction:column; gap:8px;">
+                        <label style="font-size:12px; font-weight:600; color:var(--text-secondary);">Approximate Annual Revenue *</label>
+                        <div style="display:grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 12px; background: rgba(11,28,43,0.015); border: 1px solid var(--border-light); border-radius: 8px; padding: 16px; transition: all 0.3s ease;">
+                            <label style="display:flex; align-items:center; gap:8px; font-size:12.5px; color:var(--text-primary); cursor:pointer;">
+                                <input type="radio" name="annual_revenue" value="Under $50,000" required style="accent-color: var(--yellow);"> Under $50,000
+                            </label>
+                            <label style="display:flex; align-items:center; gap:8px; font-size:12.5px; color:var(--text-primary); cursor:pointer;">
+                                <input type="radio" name="annual_revenue" value="$50,000–$100,000" style="accent-color: var(--yellow);"> $50,000–$100,000
+                            </label>
+                            <label style="display:flex; align-items:center; gap:8px; font-size:12.5px; color:var(--text-primary); cursor:pointer;">
+                                <input type="radio" name="annual_revenue" value="$100,001–$250,000" style="accent-color: var(--yellow);"> $100,001–$250,000
+                            </label>
+                            <label style="display:flex; align-items:center; gap:8px; font-size:12.5px; color:var(--text-primary); cursor:pointer;">
+                                <input type="radio" name="annual_revenue" value="$250,001–$500,000" style="accent-color: var(--yellow);"> $250,001–$500,000
+                            </label>
+                            <label style="display:flex; align-items:center; gap:8px; font-size:12.5px; color:var(--text-primary); cursor:pointer;">
+                                <input type="radio" name="annual_revenue" value="$500,001–$1 million" style="accent-color: var(--yellow);"> $500,001–$1 million
+                            </label>
+                            <label style="display:flex; align-items:center; gap:8px; font-size:12.5px; color:var(--text-primary); cursor:pointer;">
+                                <input type="radio" name="annual_revenue" value="Over $1 million" style="accent-color: var(--yellow);"> Over $1 million
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="form-field" style="display:flex; flex-direction:column; gap:8px;">
+                        <label style="font-size:12px; font-weight:600; color:var(--text-secondary);">Current Accounting System *</label>
+                        <div style="display:grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 12px; background: rgba(11,28,43,0.015); border: 1px solid var(--border-light); border-radius: 8px; padding: 16px; transition: all 0.3s ease;">
+                            <label style="display:flex; align-items:center; gap:8px; font-size:12.5px; color:var(--text-primary); cursor:pointer;">
+                                <input type="radio" name="accounting_system" value="QuickBooks" required style="accent-color: var(--yellow);"> QuickBooks
+                            </label>
+                            <label style="display:flex; align-items:center; gap:8px; font-size:12.5px; color:var(--text-primary); cursor:pointer;">
+                                <input type="radio" name="accounting_system" value="Odoo" style="accent-color: var(--yellow);"> Odoo
+                            </label>
+                            <label style="display:flex; align-items:center; gap:8px; font-size:12.5px; color:var(--text-primary); cursor:pointer;">
+                                <input type="radio" name="accounting_system" value="Xero" style="accent-color: var(--yellow);"> Xero
+                            </label>
+                            <label style="display:flex; align-items:center; gap:8px; font-size:12.5px; color:var(--text-primary); cursor:pointer;">
+                                <input type="radio" name="accounting_system" value="Wave" style="accent-color: var(--yellow);"> Wave
+                            </label>
+                            <label style="display:flex; align-items:center; gap:8px; font-size:12.5px; color:var(--text-primary); cursor:pointer;">
+                                <input type="radio" name="accounting_system" value="Excel / Spreadsheet" style="accent-color: var(--yellow);"> Excel / Spreadsheet
+                            </label>
+                            <label style="display:flex; align-items:center; gap:8px; font-size:12.5px; color:var(--text-primary); cursor:pointer;">
+                                <input type="radio" name="accounting_system" value="No formal system" style="accent-color: var(--yellow);"> No formal system
+                            </label>
+                            <label style="display:flex; align-items:center; gap:8px; font-size:12.5px; color:var(--text-primary); cursor:pointer; grid-column: 1 / -1;">
+                                <input type="radio" name="accounting_system" value="Other" style="accent-color: var(--yellow);"> Other:
+                                <input type="text" name="accounting_system_other" class="form-input" style="flex:1; background: rgba(11,28,43,0.02); color: var(--text-primary); border-color: var(--border-light); padding: 4px 8px; border-radius: 4px; font-size: 12px; margin-left: 8px;">
+                            </label>
+                        </div>
+                    </div>
+
+                    <div style="display:grid; grid-template-columns: 1fr 1fr; gap: 20px;">
+                        <div class="form-field" style="display:flex; flex-direction:column; gap:8px;">
+                            <label style="font-size:12px; font-weight:600; color:var(--text-secondary);">Are your books currently up to date? *</label>
+                            <div style="display:flex; gap: 16px; background: rgba(11,28,43,0.015); border: 1px solid var(--border-light); border-radius: 8px; padding: 14px; transition: all 0.3s ease;">
+                                <label style="display:flex; align-items:center; gap:6px; font-size:12.5px; color:var(--text-primary); cursor:pointer;">
+                                    <input type="radio" name="books_up_to_date" value="Yes" required style="accent-color: var(--yellow);"> Yes
+                                </label>
+                                <label style="display:flex; align-items:center; gap:6px; font-size:12.5px; color:var(--text-primary); cursor:pointer;">
+                                    <input type="radio" name="books_up_to_date" value="No" style="accent-color: var(--yellow);"> No
+                                </label>
+                                <label style="display:flex; align-items:center; gap:6px; font-size:12.5px; color:var(--text-primary); cursor:pointer;">
+                                    <input type="radio" name="books_up_to_date" value="Not sure" style="accent-color: var(--yellow);"> Not sure
+                                </label>
+                            </div>
+                        </div>
+
+                        <div class="form-field" style="display:flex; flex-direction:column; gap:8px;">
+                            <label style="font-size:12px; font-weight:600; color:var(--text-secondary);">Do you currently have a bookkeeper or accountant? *</label>
+                            <div style="display:flex; gap: 20px; background: rgba(11,28,43,0.015); border: 1px solid var(--border-light); border-radius: 8px; padding: 14px; transition: all 0.3s ease;">
+                                <label style="display:flex; align-items:center; gap:6px; font-size:12.5px; color:var(--text-primary); cursor:pointer;">
+                                    <input type="radio" name="has_bookkeeper" value="Yes" required style="accent-color: var(--yellow);"> Yes
+                                </label>
+                                <label style="display:flex; align-items:center; gap:6px; font-size:12.5px; color:var(--text-primary); cursor:pointer;">
+                                    <input type="radio" name="has_bookkeeper" value="No" style="accent-color: var(--yellow);"> No
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-field" style="display:flex; flex-direction:column; gap:8px;">
+                        <label style="font-size:12px; font-weight:600; color:var(--text-secondary);">How far behind are your books, if applicable?</label>
+                        <div style="display:grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 12px; background: rgba(11,28,43,0.015); border: 1px solid var(--border-light); border-radius: 8px; padding: 16px; transition: all 0.3s ease;">
+                            <label style="display:flex; align-items:center; gap:8px; font-size:12.5px; color:var(--text-primary); cursor:pointer;">
+                                <input type="radio" name="books_behind" value="Current" style="accent-color: var(--yellow);"> Current
+                            </label>
+                            <label style="display:flex; align-items:center; gap:8px; font-size:12.5px; color:var(--text-primary); cursor:pointer;">
+                                <input type="radio" name="books_behind" value="1-3 months behind" style="accent-color: var(--yellow);"> 1–3 months behind
+                            </label>
+                            <label style="display:flex; align-items:center; gap:8px; font-size:12.5px; color:var(--text-primary); cursor:pointer;">
+                                <input type="radio" name="books_behind" value="4-6 months behind" style="accent-color: var(--yellow);"> 4–6 months behind
+                            </label>
+                            <label style="display:flex; align-items:center; gap:8px; font-size:12.5px; color:var(--text-primary); cursor:pointer;">
+                                <input type="radio" name="books_behind" value="7-12 months behind" style="accent-color: var(--yellow);"> 7–12 months behind
+                            </label>
+                            <label style="display:flex; align-items:center; gap:8px; font-size:12.5px; color:var(--text-primary); cursor:pointer;">
+                                <input type="radio" name="books_behind" value="More than 12 months behind" style="accent-color: var(--yellow);"> More than 12 months behind
+                            </label>
+                            <label style="display:flex; align-items:center; gap:8px; font-size:12.5px; color:var(--text-primary); cursor:pointer;">
+                                <input type="radio" name="books_behind" value="Not sure" style="accent-color: var(--yellow);"> Not sure
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="form-field" style="display:flex; flex-direction:column; gap:8px;">
+                        <label style="font-size:12px; font-weight:600; color:var(--text-secondary);">Are you currently experiencing any of the following? (Select all that apply)</label>
+                        <div style="display:grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 12px; background: rgba(11,28,43,0.015); border: 1px solid var(--border-light); border-radius: 8px; padding: 16px;">
+                            <label style="display:flex; align-items:center; gap:8px; font-size:12.5px; color:var(--text-primary); cursor:pointer;">
+                                <input type="checkbox" name="pain_points" value="Difficulty tracking income and expenses" style="accent-color: var(--yellow);"> Difficulty tracking income and expenses
+                            </label>
+                            <label style="display:flex; align-items:center; gap:8px; font-size:12.5px; color:var(--text-primary); cursor:pointer;">
+                                <input type="checkbox" name="pain_points" value="Poor cash flow visibility" style="accent-color: var(--yellow);"> Poor cash flow visibility
+                            </label>
+                            <label style="display:flex; align-items:center; gap:8px; font-size:12.5px; color:var(--text-primary); cursor:pointer;">
+                                <input type="checkbox" name="pain_points" value="Behind on bookkeeping" style="accent-color: var(--yellow);"> Behind on bookkeeping
+                            </label>
+                            <label style="display:flex; align-items:center; gap:8px; font-size:12.5px; color:var(--text-primary); cursor:pointer;">
+                                <input type="checkbox" name="pain_points" value="Tax compliance issues" style="accent-color: var(--yellow);"> Tax compliance issues
+                            </label>
+                            <label style="display:flex; align-items:center; gap:8px; font-size:12.5px; color:var(--text-primary); cursor:pointer;">
+                                <input type="checkbox" name="pain_points" value="Payroll or contractor payment issues" style="accent-color: var(--yellow);"> Payroll or contractor payment issues
+                            </label>
+                            <label style="display:flex; align-items:center; gap:8px; font-size:12.5px; color:var(--text-primary); cursor:pointer;">
+                                <input type="checkbox" name="pain_points" value="Accounts payable challenges" style="accent-color: var(--yellow);"> Accounts payable challenges
+                            </label>
+                            <label style="display:flex; align-items:center; gap:8px; font-size:12.5px; color:var(--text-primary); cursor:pointer;">
+                                <input type="checkbox" name="pain_points" value="Accounts receivable / unpaid invoice challenges" style="accent-color: var(--yellow);"> Accounts receivable / unpaid invoice challenges
+                            </label>
+                            <label style="display:flex; align-items:center; gap:8px; font-size:12.5px; color:var(--text-primary); cursor:pointer;">
+                                <input type="checkbox" name="pain_points" value="Need financial reports for funding" style="accent-color: var(--yellow);"> Need financial reports for funding
+                            </label>
+                            <label style="display:flex; align-items:center; gap:8px; font-size:12.5px; color:var(--text-primary); cursor:pointer;">
+                                <input type="checkbox" name="pain_points" value="Need cleanup or catch-up bookkeeping" style="accent-color: var(--yellow);"> Need cleanup or catch-up bookkeeping
+                            </label>
+                            <label style="display:flex; align-items:center; gap:8px; font-size:12.5px; color:var(--text-primary); cursor:pointer;">
+                                <input type="checkbox" name="pain_points" value="Need better business systems" style="accent-color: var(--yellow);"> Need better business systems
+                            </label>
+                            <label style="display:flex; align-items:center; gap:8px; font-size:12.5px; color:var(--text-primary); cursor:pointer; grid-column: 1 / -1;">
+                                <input type="checkbox" name="pain_points" value="Other" style="accent-color: var(--yellow);"> Other:
+                                <input type="text" name="pain_points_other" class="form-input" style="flex:1; background: rgba(11,28,43,0.02); color: var(--text-primary); border-color: var(--border-light); padding: 4px 8px; border-radius: 4px; font-size: 12px; margin-left: 8px;">
+                            </label>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- SECTION 4: REASON FOR APPLYING -->
+                <div style="display:flex; flex-direction:column; gap:20px;">
+                    <h3 style="font-size: 18px; font-weight: 700; color: var(--text-primary); border-bottom: 1px solid var(--border-light); padding-bottom: 10px; margin: 0;">4. Reason for Applying</h3>
+                    
+                    <div class="form-field" style="display:flex; flex-direction:column; gap:6px;">
+                        <label style="font-size:12px; font-weight:600; color:var(--text-secondary);">Please explain why your business is applying for discounted support through the Pivot Aide Access Program. *</label>
+                        <textarea name="reason_applying" class="form-input form-textarea" style="background: rgba(11,28,43,0.02); color: var(--text-primary); border-color: var(--border-light); padding: 12px 16px; border-radius: 8px; font-size: 13px; height: 100px; resize: none;" required placeholder="Please describe how this program will benefit your operations..."></textarea>
+                    </div>
+
+                    <div class="form-field" style="display:flex; flex-direction:column; gap:6px;">
+                        <label style="font-size:12px; font-weight:600; color:var(--text-secondary);">What are your top financial or accounting challenges right now? *</label>
+                        <textarea name="financial_challenges" class="form-input form-textarea" style="background: rgba(11,28,43,0.02); color: var(--text-primary); border-color: var(--border-light); padding: 12px 16px; border-radius: 8px; font-size: 13px; height: 100px; resize: none;" required placeholder="Describe any roadblocks, backlog, or compliance issues..."></textarea>
+                    </div>
+
+                    <div class="form-field" style="display:flex; flex-direction:column; gap:8px;">
+                        <label style="font-size:12px; font-weight:600; color:var(--text-secondary);">What would successful support from Pivot Aide help your business accomplish? (Select all that apply)</label>
+                        <div style="display:grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 12px; background: rgba(11,28,43,0.015); border: 1px solid var(--border-light); border-radius: 8px; padding: 16px;">
+                            <label style="display:flex; align-items:center; gap:8px; font-size:12.5px; color:var(--text-primary); cursor:pointer;">
+                                <input type="checkbox" name="accomplishments" value="Improve bookkeeping accuracy" style="accent-color: var(--yellow);"> Improve bookkeeping accuracy
+                            </label>
+                            <label style="display:flex; align-items:center; gap:8px; font-size:12.5px; color:var(--text-primary); cursor:pointer;">
+                                <input type="checkbox" name="accomplishments" value="Stay compliant with tax and reporting obligations" style="accent-color: var(--yellow);"> Stay compliant with tax and reporting obligations
+                            </label>
+                            <label style="display:flex; align-items:center; gap:8px; font-size:12.5px; color:var(--text-primary); cursor:pointer;">
+                                <input type="checkbox" name="accomplishments" value="Prepare for business funding or loans" style="accent-color: var(--yellow);"> Prepare for business funding or loans
+                            </label>
+                            <label style="display:flex; align-items:center; gap:8px; font-size:12.5px; color:var(--text-primary); cursor:pointer;">
+                                <input type="checkbox" name="accomplishments" value="Improve cash flow management" style="accent-color: var(--yellow);"> Improve cash flow management
+                            </label>
+                            <label style="display:flex; align-items:center; gap:8px; font-size:12.5px; color:var(--text-primary); cursor:pointer;">
+                                <input type="checkbox" name="accomplishments" value="Understand business performance" style="accent-color: var(--yellow);"> Understand business performance
+                            </label>
+                            <label style="display:flex; align-items:center; gap:8px; font-size:12.5px; color:var(--text-primary); cursor:pointer;">
+                                <input type="checkbox" name="accomplishments" value="Clean up past accounting records" style="accent-color: var(--yellow);"> Clean up past accounting records
+                            </label>
+                            <label style="display:flex; align-items:center; gap:8px; font-size:12.5px; color:var(--text-primary); cursor:pointer;">
+                                <input type="checkbox" name="accomplishments" value="Save time and reduce administrative burden" style="accent-color: var(--yellow);"> Save time and reduce administrative burden
+                            </label>
+                            <label style="display:flex; align-items:center; gap:8px; font-size:12.5px; color:var(--text-primary); cursor:pointer;">
+                                <input type="checkbox" name="accomplishments" value="Prepare for growth" style="accent-color: var(--yellow);"> Prepare for growth
+                            </label>
+                            <label style="display:flex; align-items:center; gap:8px; font-size:12.5px; color:var(--text-primary); cursor:pointer; grid-column: 1 / -1;">
+                                <input type="checkbox" name="accomplishments" value="Other" style="accent-color: var(--yellow);"> Other:
+                                <input type="text" name="accomplishments_other" class="form-input" style="flex:1; background: rgba(11,28,43,0.02); color: var(--text-primary); border-color: var(--border-light); padding: 4px 8px; border-radius: 4px; font-size: 12px; margin-left: 8px;">
+                            </label>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- SECTION 5: SERVICES NEEDED -->
+                <div style="display:flex; flex-direction:column; gap:20px;">
+                    <h3 style="font-size: 18px; font-weight: 700; color: var(--text-primary); border-bottom: 1px solid var(--border-light); padding-bottom: 10px; margin: 0;">5. Services Needed</h3>
+
+                    <div class="form-field" style="display:flex; flex-direction:column; gap:8px;">
+                        <label style="font-size:12px; font-weight:600; color:var(--text-secondary);">Please select the services your business may need: (Select all that apply)</label>
+                        <div style="display:grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 12px; background: rgba(11,28,43,0.015); border: 1px solid var(--border-light); border-radius: 8px; padding: 16px;">
+                            <label style="display:flex; align-items:center; gap:8px; font-size:12.5px; color:var(--text-primary); cursor:pointer;">
+                                <input type="checkbox" name="services_needed" value="Monthly bookkeeping" style="accent-color: var(--yellow);"> Monthly bookkeeping
+                            </label>
+                            <label style="display:flex; align-items:center; gap:8px; font-size:12.5px; color:var(--text-primary); cursor:pointer;">
+                                <input type="checkbox" name="services_needed" value="Bank reconciliation" style="accent-color: var(--yellow);"> Bank reconciliation
+                            </label>
+                            <label style="display:flex; align-items:center; gap:8px; font-size:12.5px; color:var(--text-primary); cursor:pointer;">
+                                <input type="checkbox" name="services_needed" value="Financial statement preparation" style="accent-color: var(--yellow);"> Financial statement preparation
+                            </label>
+                            <label style="display:flex; align-items:center; gap:8px; font-size:12.5px; color:var(--text-primary); cursor:pointer;">
+                                <input type="checkbox" name="services_needed" value="Accounts payable support" style="accent-color: var(--yellow);"> Accounts payable support
+                            </label>
+                            <label style="display:flex; align-items:center; gap:8px; font-size:12.5px; color:var(--text-primary); cursor:pointer;">
+                                <input type="checkbox" name="services_needed" value="Accounts receivable support" style="accent-color: var(--yellow);"> Accounts receivable support
+                            </label>
+                            <label style="display:flex; align-items:center; gap:8px; font-size:12.5px; color:var(--text-primary); cursor:pointer;">
+                                <input type="checkbox" name="services_needed" value="Payroll coordination" style="accent-color: var(--yellow);"> Payroll coordination
+                            </label>
+                            <label style="display:flex; align-items:center; gap:8px; font-size:12.5px; color:var(--text-primary); cursor:pointer;">
+                                <input type="checkbox" name="services_needed" value="Sales tax support" style="accent-color: var(--yellow);"> Sales tax support
+                            </label>
+                            <label style="display:flex; align-items:center; gap:8px; font-size:12.5px; color:var(--text-primary); cursor:pointer;">
+                                <input type="checkbox" name="services_needed" value="Tax-ready financial reports" style="accent-color: var(--yellow);"> Tax-ready financial reports
+                            </label>
+                            <label style="display:flex; align-items:center; gap:8px; font-size:12.5px; color:var(--text-primary); cursor:pointer;">
+                                <input type="checkbox" name="services_needed" value="Catch-up bookkeeping" style="accent-color: var(--yellow);"> Catch-up bookkeeping
+                            </label>
+                            <label style="display:flex; align-items:center; gap:8px; font-size:12.5px; color:var(--text-primary); cursor:pointer;">
+                                <input type="checkbox" name="services_needed" value="Cleanup bookkeeping" style="accent-color: var(--yellow);"> Cleanup bookkeeping
+                            </label>
+                            <label style="display:flex; align-items:center; gap:8px; font-size:12.5px; color:var(--text-primary); cursor:pointer;">
+                                <input type="checkbox" name="services_needed" value="Budgeting and forecasting" style="accent-color: var(--yellow);"> Budgeting and forecasting
+                            </label>
+                            <label style="display:flex; align-items:center; gap:8px; font-size:12.5px; color:var(--text-primary); cursor:pointer;">
+                                <input type="checkbox" name="services_needed" value="Funding-readiness support" style="accent-color: var(--yellow);"> Funding-readiness support
+                            </label>
+                            <label style="display:flex; align-items:center; gap:8px; font-size:12.5px; color:var(--text-primary); cursor:pointer;">
+                                <input type="checkbox" name="services_needed" value="Odoo accounting support" style="accent-color: var(--yellow);"> Odoo accounting support
+                            </label>
+                            <label style="display:flex; align-items:center; gap:8px; font-size:12.5px; color:var(--text-primary); cursor:pointer;">
+                                <input type="checkbox" name="services_needed" value="QuickBooks support" style="accent-color: var(--yellow);"> QuickBooks support
+                            </label>
+                            <label style="display:flex; align-items:center; gap:8px; font-size:12.5px; color:var(--text-primary); cursor:pointer;">
+                                <input type="checkbox" name="services_needed" value="ERP/accounting system advisory" style="accent-color: var(--yellow);"> ERP/accounting system advisory
+                            </label>
+                            <label style="display:flex; align-items:center; gap:8px; font-size:12.5px; color:var(--text-primary); cursor:pointer; grid-column: 1 / -1;">
+                                <input type="checkbox" name="services_needed" value="Other" style="accent-color: var(--yellow);"> Other:
+                                <input type="text" name="services_needed_other" class="form-input" style="flex:1; background: rgba(11,28,43,0.02); color: var(--text-primary); border-color: var(--border-light); padding: 4px 8px; border-radius: 4px; font-size: 12px; margin-left: 8px;">
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="form-field" style="display:flex; flex-direction:column; gap:8px;">
+                        <label style="font-size:12px; font-weight:600; color:var(--text-secondary);">Estimated monthly transaction volume: *</label>
+                        <div style="display:grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 12px; background: rgba(11,28,43,0.015); border: 1px solid var(--border-light); border-radius: 8px; padding: 16px; transition: all 0.3s ease;">
+                            <label style="display:flex; align-items:center; gap:8px; font-size:12.5px; color:var(--text-primary); cursor:pointer;">
+                                <input type="radio" name="transaction_volume" value="0-50 transactions" required style="accent-color: var(--yellow);"> 0–50 transactions
+                            </label>
+                            <label style="display:flex; align-items:center; gap:8px; font-size:12.5px; color:var(--text-primary); cursor:pointer;">
+                                <input type="radio" name="transaction_volume" value="51-100 transactions" style="accent-color: var(--yellow);"> 51–100 transactions
+                            </label>
+                            <label style="display:flex; align-items:center; gap:8px; font-size:12.5px; color:var(--text-primary); cursor:pointer;">
+                                <input type="radio" name="transaction_volume" value="101-250 transactions" style="accent-color: var(--yellow);"> 101–250 transactions
+                            </label>
+                            <label style="display:flex; align-items:center; gap:8px; font-size:12.5px; color:var(--text-primary); cursor:pointer;">
+                                <input type="radio" name="transaction_volume" value="251-500 transactions" style="accent-color: var(--yellow);"> 251–500 transactions
+                            </label>
+                            <label style="display:flex; align-items:center; gap:8px; font-size:12.5px; color:var(--text-primary); cursor:pointer;">
+                                <input type="radio" name="transaction_volume" value="Over 500 transactions" style="accent-color: var(--yellow);"> Over 500 transactions
+                            </label>
+                            <label style="display:flex; align-items:center; gap:8px; font-size:12.5px; color:var(--text-primary); cursor:pointer;">
+                                <input type="radio" name="transaction_volume" value="Not sure" style="accent-color: var(--yellow);"> Not sure
+                            </label>
+                        </div>
+                    </div>
+
+                    <div style="display:grid; grid-template-columns: 1fr 1fr; gap: 20px;">
+                        <div class="form-field" style="display:flex; flex-direction:column; gap:6px;">
+                            <label style="font-size:12px; font-weight:600; color:var(--text-secondary);">Number of business bank accounts *</label>
+                            <input type="number" name="bank_accounts" class="form-input" style="background: rgba(11,28,43,0.02); color: var(--text-primary); border-color: var(--border-light); padding: 12px 16px; border-radius: 8px; font-size: 13px;" required min="0">
+                        </div>
+                        <div class="form-field" style="display:flex; flex-direction:column; gap:6px;">
+                            <label style="font-size:12px; font-weight:600; color:var(--text-secondary);">Number of business credit cards *</label>
+                            <input type="number" name="credit_cards" class="form-input" style="background: rgba(11,28,43,0.02); color: var(--text-primary); border-color: var(--border-light); padding: 12px 16px; border-radius: 8px; font-size: 13px;" required min="0">
+                        </div>
+                    </div>
+                </div>
+
+                <!-- SECTION 6: FOUNDATION PACKAGE ELIGIBILITY -->
+                <div style="display:flex; flex-direction:column; gap:20px;">
+                    <h3 style="font-size: 18px; font-weight: 700; color: var(--text-primary); border-bottom: 1px solid var(--border-light); padding-bottom: 10px; margin: 0;">6. Foundation Package Eligibility</h3>
+                    <p style="font-size: 13px; color: var(--text-secondary); line-height: 1.5; margin: 0;">The Foundation Package starts at $599/month and is available only to qualifying small business clients approved through the Pivot Aide Access Program.</p>
+                    
+                    <div style="display:flex; flex-direction:column; gap:12px; background: rgba(11,28,43,0.015); border: 1px solid var(--border-light); border-radius: 8px; padding: 20px; transition: all 0.3s ease;">
+                        <label style="display:flex; align-items:flex-start; gap:10px; font-size:12.5px; color:var(--text-primary); cursor:pointer; line-height:1.5;">
+                            <input type="checkbox" name="eligibility" value="guarantee" required style="accent-color: var(--yellow); margin-top:2px;"> I understand that this is a discounted support program and approval is not guaranteed. *
+                        </label>
+                        <label style="display:flex; align-items:flex-start; gap:10px; font-size:12.5px; color:var(--text-primary); cursor:pointer; line-height:1.5;">
+                            <input type="checkbox" name="eligibility" value="variance" required style="accent-color: var(--yellow); margin-top:2px;"> I understand that pricing may vary based on transaction volume, cleanup needs, number of accounts, reporting requirements, and service complexity. *
+                        </label>
+                        <label style="display:flex; align-items:flex-start; gap:10px; font-size:12.5px; color:var(--text-primary); cursor:pointer; line-height:1.5;">
+                            <input type="checkbox" name="eligibility" value="scope" required style="accent-color: var(--yellow); margin-top:2px;"> I understand that the Foundation Package does not automatically include tax preparation, payroll processing, or advanced ERP implementation unless separately agreed. *
+                        </label>
+                        <label style="display:flex; align-items:flex-start; gap:10px; font-size:12.5px; color:var(--text-primary); cursor:pointer; line-height:1.5;">
+                            <input type="checkbox" name="eligibility" value="documents" required style="accent-color: var(--yellow); margin-top:2px;"> I understand that Pivot Aide may request supporting documents before approving my application. *
+                        </label>
+                        <label style="display:flex; align-items:flex-start; gap:10px; font-size:12.5px; color:var(--text-primary); cursor:pointer; line-height:1.5;">
+                            <input type="checkbox" name="eligibility" value="accurate" required style="accent-color: var(--yellow); margin-top:2px;"> I agree to provide accurate and complete information for review. *
+                        </label>
+                    </div>
+                </div>
+
+                <!-- SECTION 7: DOCUMENTS REQUESTED -->
+                <div style="display:flex; flex-direction:column; gap:20px;">
+                    <h3 style="font-size: 18px; font-weight: 700; color: var(--text-primary); border-bottom: 1px solid var(--border-light); padding-bottom: 10px; margin: 0;">7. Documents Requested</h3>
+                    <p style="font-size: 13px; color: var(--text-secondary); line-height: 1.5; margin: 0;">Please check any available documents that you can provide to help us review your application:</p>
+                    
+                    <div style="display:grid; grid-template-columns: repeat(auto-fit, minmax(360px, 1fr)); gap: 16px; background: rgba(11,28,43,0.015); border: 1px solid var(--border-light); border-radius: 8px; padding: 20px;">
+                        <label style="display:flex; align-items:center; justify-content:space-between; gap:12px; font-size:12.5px; color:var(--text-primary); cursor:pointer;">
+                            <span style="display:flex; align-items:center; gap:8px;"><input type="checkbox" name="doc_bank_statement" style="accent-color: var(--yellow);"> Most recent business bank statement</span>
+                        </label>
+                        <label style="display:flex; align-items:center; justify-content:space-between; gap:12px; font-size:12.5px; color:var(--text-primary); cursor:pointer;">
+                            <span style="display:flex; align-items:center; gap:8px;"><input type="checkbox" name="doc_cc_statement" style="accent-color: var(--yellow);"> Most recent business credit card statement</span>
+                        </label>
+                        <label style="display:flex; align-items:center; justify-content:space-between; gap:12px; font-size:12.5px; color:var(--text-primary); cursor:pointer;">
+                            <span style="display:flex; align-items:center; gap:8px;"><input type="checkbox" name="doc_pl_statement" style="accent-color: var(--yellow);"> Current profit and loss statement</span>
+                        </label>
+                        <label style="display:flex; align-items:center; justify-content:space-between; gap:12px; font-size:12.5px; color:var(--text-primary); cursor:pointer;">
+                            <span style="display:flex; align-items:center; gap:8px;"><input type="checkbox" name="doc_balance_sheet" style="accent-color: var(--yellow);"> Current balance sheet</span>
+                        </label>
+                        <label style="display:flex; align-items:center; justify-content:space-between; gap:12px; font-size:12.5px; color:var(--text-primary); cursor:pointer;">
+                            <span style="display:flex; align-items:center; gap:8px;"><input type="checkbox" name="doc_tax_return" style="accent-color: var(--yellow);"> Most recent business tax return</span>
+                        </label>
+                        <label style="display:flex; align-items:center; justify-content:space-between; gap:12px; font-size:12.5px; color:var(--text-primary); cursor:pointer;">
+                            <span style="display:flex; align-items:center; gap:8px;"><input type="checkbox" name="doc_payroll" style="accent-color: var(--yellow);"> Payroll reports, if applicable</span>
+                        </label>
+                        <label style="display:flex; align-items:center; justify-content:space-between; gap:12px; font-size:12.5px; color:var(--text-primary); cursor:pointer;">
+                            <span style="display:flex; align-items:center; gap:8px;"><input type="checkbox" name="doc_system_access" style="accent-color: var(--yellow);"> Accounting system access, if applicable</span>
+                        </label>
+                        <label style="display:flex; align-items:center; justify-content:space-between; gap:12px; font-size:12.5px; color:var(--text-primary); cursor:pointer;">
+                            <span style="display:flex; align-items:center; gap:8px;"><input type="checkbox" name="doc_concerns_list" style="accent-color: var(--yellow);"> List of current accounting concerns</span>
+                        </label>
+                        <label style="display:flex; align-items:center; justify-content:space-between; gap:12px; font-size:12.5px; color:var(--text-primary); cursor:pointer; grid-column: 1 / -1;">
+                            <span style="display:flex; align-items:center; gap:8px;"><input type="checkbox" name="doc_other" style="accent-color: var(--yellow);"> Other supporting documents</span>
+                        </label>
+                    </div>
+                </div>
+
+                <!-- SECTION 8: CERTIFICATION AND SIGNATURE -->
+                <div style="display:flex; flex-direction:column; gap:20px;">
+                    <h3 style="font-size: 18px; font-weight: 700; color: var(--text-primary); border-bottom: 1px solid var(--border-light); padding-bottom: 10px; margin: 0;">8. Certification and Signature</h3>
+                    <p style="font-size: 13.5px; color: var(--text-secondary); line-height: 1.6; margin: 0;">By signing below, I certify that the information provided in this application is true and accurate to the best of my knowledge. I understand that submission of this application does not guarantee acceptance into the Pivot Aide Access Program or approval for discounted pricing.</p>
+                    
+                    <div style="display:flex; flex-direction:column; gap:16px;">
+                        <div class="form-field" style="display:flex; flex-direction:column; gap:6px;">
+                            <label style="font-size:12px; font-weight:600; color:var(--text-secondary);">Business Owner / Authorized Representative Name *</label>
+                            <input type="text" name="representative_name" class="form-input" style="background: rgba(11,28,43,0.02); color: var(--text-primary); border-color: var(--border-light); padding: 12px 16px; border-radius: 8px; font-size: 13px;" required>
+                        </div>
+                        <div style="display:grid; grid-template-columns: 2fr 1fr; gap: 20px;">
+                            <div class="form-field" style="display:flex; flex-direction:column; gap:6px;">
+                                <label style="font-size:12px; font-weight:600; color:var(--text-secondary);">Signature (Type Full Name to Sign) *</label>
+                                <input type="text" name="signature" class="form-input" style="background: rgba(11,28,43,0.02); color: var(--text-primary); border-color: var(--border-light); padding: 12px 16px; border-radius: 8px; font-size: 16px; font-family: 'Playfair Display', Georgia, serif; font-style: italic; font-weight: 600;" placeholder="Jane Smith" required>
+                            </div>
+                            <div class="form-field" style="display:flex; flex-direction:column; gap:6px;">
+                                <label style="font-size:12px; font-weight:600; color:var(--text-secondary);">Date *</label>
+                                <input type="date" name="signature_date" id="signatureDate" class="form-input" style="background: rgba(11,28,43,0.02); color: var(--text-primary); border-color: var(--border-light); padding: 12px 16px; border-radius: 8px; font-size: 13px;" required>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div style="text-align: center; margin-top: 10px;">
+                    <button type="submit" class="btn-pill-submit" id="formSubmitBtn" style="padding: 16px 48px; font-size: 15px; font-weight:700; width:auto; border-radius: 30px; letter-spacing:0.02em;">Submit Application →</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</section>
+
+<!-- OFFICE LOCATIONS -->
+<section class="content-section alt" id="locations">
+    <div class="container">
+        <div class="section-header animate-on-scroll">
+            <div class="section-tag"><span class="section-tag-dot"></span>Corporate Presence</div>
+            <h2 class="section-title">Our U.S. <em class="serif-italic">Headquarters</em></h2>
+            <p class="section-subtitle">We manage accounts, tax filings, and ERP projects locally from our offices in Maryland and Virginia.</p>
+        </div>
+        
+        <div class="offices-grid" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));max-width:860px;margin:0 auto;gap:24px;">
+            <!-- Maryland Office Card -->
+            <div class="office-card scroll-reveal" data-stagger style="background:var(--bg-card);border:1px solid var(--border-light);border-radius:var(--card-radius);padding:32px;position:relative;overflow:hidden;display:flex;gap:20px;align-items:flex-start;">
+                <div class="office-icon-wrap" data-stagger style="padding:12px;border-radius:12px;background:rgba(216,183,74,0.06);border:1px solid rgba(216,183,74,0.2);display:flex;align-items:center;justify-content:center;color:var(--yellow);flex-shrink:0;">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+                </div>
+                <div class="office-info">
+                    <h4 data-stagger style="font-size:18px;color:var(--text-primary);font-weight:700;margin-bottom:4px;">U.S. Headquarters</h4>
+                    <p data-stagger style="font-size:12px;color:var(--yellow);text-transform:uppercase;letter-spacing:var(--ls-caps);margin-bottom:12px;font-weight:600;">Maryland Office</p>
+                    <p data-stagger style="font-size:13px;color:var(--text-secondary);margin-bottom:12px;line-height:1.5;">6475 New Hampshire Ave,<br/>Hyattsville, MD 20783</p>
+                    <p data-stagger style="font-size:11px;color:var(--text-muted);font-family:monospace;letter-spacing:0.02em;margin-bottom:14px;"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="display:inline-block;vertical-align:middle;margin-right:4px;color:var(--yellow);"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg> 38.9715° N, 76.9717° W</p>
+                    <div data-stagger class="office-map-canvas" style="height:100px;border-radius:8px;margin-bottom:12px;background:rgba(8,20,32,0.8);border:1px solid var(--border-light);overflow:hidden;"></div>
+                    <a data-stagger href="https://maps.google.com/?q=6475+New+Hampshire+Ave,+Hyattsville,+MD+20783" target="_blank" rel="noopener" class="btn-ghost" style="padding: 6px 14px; font-size: 11px; display: inline-flex;">View Map ↗</a>
+                </div>
+            </div>
+            
+            <!-- Virginia Office Card -->
+            <div class="office-card scroll-reveal" data-stagger style="background:var(--bg-card);border:1px solid var(--border-light);border-radius:var(--card-radius);padding:32px;position:relative;overflow:hidden;display:flex;gap:20px;align-items:flex-start;">
+                <div class="office-icon-wrap" data-stagger style="padding:12px;border-radius:12px;background:rgba(216,183,74,0.06);border:1px solid rgba(216,183,74,0.2);display:flex;align-items:center;justify-content:center;color:var(--yellow);flex-shrink:0;">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+                </div>
+                <div class="office-info">
+                    <h4 data-stagger style="font-size:18px;color:var(--text-primary);font-weight:700;margin-bottom:4px;">Virginia Branch</h4>
+                    <p data-stagger style="font-size:12px;color:var(--yellow);text-transform:uppercase;letter-spacing:var(--ls-caps);margin-bottom:12px;font-weight:600;">Virginia Office</p>
+                    <p data-stagger style="font-size:13px;color:var(--text-secondary);margin-bottom:12px;line-height:1.5;">11166 Fairfax Blvd,<br/>Suite 500,<br/>Fairfax, VA 22030</p>
+                    <p data-stagger style="font-size:11px;color:var(--text-muted);font-family:monospace;letter-spacing:0.02em;margin-bottom:14px;"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="display:inline-block;vertical-align:middle;margin-right:4px;color:var(--yellow);"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg> 38.8624° N, 77.3302° W</p>
+                    <div data-stagger class="office-map-canvas" style="height:100px;border-radius:8px;margin-bottom:12px;background:rgba(8,20,32,0.8);border:1px solid var(--border-light);overflow:hidden;"></div>
+                    <a data-stagger href="https://maps.google.com/?q=11166+Fairfax+Blvd,+Suite+500,+Fairfax,+VA+22030" target="_blank" rel="noopener" class="btn-ghost" style="padding: 6px 14px; font-size: 11px; display: inline-flex;">View Map ↗</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- SCHEDULE A CONSULTATION CTA -->
+<section class="final-cta-section" style="border-top: 1px solid var(--border-light);">
+    <div class="final-cta-bg"><div class="final-cta-orb final-cta-orb-1"></div><div class="final-cta-orb final-cta-orb-2"></div></div>
+    <div class="container">
+        <div class="final-cta-inner scroll-reveal" data-stagger>
+            <h2 class="final-cta-headline">Ready to Talk<br>About Your <em class="serif-italic">Business</em>?</h2>
+            <p class="final-cta-sub" data-stagger>Schedule a free video call with our advisors to review bookkeeping compliance, Odoo implementations, or loan readiness files.</p>
+            <a href="https://calendly.com/pivotaide" target="_blank" rel="noopener" class="btn-primary btn-lg" data-stagger>Schedule a Consultation →</a>
+        </div>
+    </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer" id="footer">
+    <div class="footer-top-border"></div>
+    <div class="container">
+        <div class="footer-grid">
+            <!-- Brand Column -->
+            <div class="footer-brand animate-on-scroll fade-left">
+                <a href="index.html" class="footer-logo">
+                    <img src="logo_image.jpg" alt="Pivot Aide Logo" style="width: 32px; height: 32px; border-radius: 8px; object-fit: cover; display: block;">
+                    <span style="font-size:18px;font-weight:800;color:var(--text-primary);letter-spacing:-0.02em;margin-left:8px;">Pivot<span style="color:var(--yellow);">Aide</span></span>
+                </a>
+                <p class="footer-brand-desc">Pivot Aide builds accounting systems for growing businesses. We deliver precision bookkeeping, corporate tax compliance, payroll processing, and lender-grade funding readiness solutions.</p>
+                <p style="font-size:12px;color:var(--yellow);font-weight:600;margin:0 0 8px;">See the Bigger Picture.</p>
+            </div>
+            <!-- Services Column -->
+            <div class="footer-col animate-on-scroll scale-in" data-delay="80">
+                <div class="footer-col-title">Services</div>
+                <ul class="footer-link-list">
+                    <li><a href="accounting.html">Accounting &amp; Bookkeeping</a></li>
+                    <li><a href="odoo.html">Odoo Accounting</a></li>
+                    <li><a href="funding.html">Funding Readiness</a></li>
+                </ul>
+            </div>
+            <!-- Resources Column -->
+            <div class="footer-col animate-on-scroll scale-in" data-delay="160">
+                <div class="footer-col-title">Resources</div>
+                <ul class="footer-link-list">
+                    <li><a href="funding.html">SBA &amp; Funding Guide</a></li>
+                    <li><a href="index.html#faq">FAQ</a></li>
+                </ul>
+            </div>
+            <!-- Company Column -->
+            <div class="footer-col animate-on-scroll scale-in" data-delay="240">
+                <div class="footer-col-title">Company</div>
+                <ul class="footer-link-list">
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="contact.html">Contact Us</a></li>
+                    <li><a href="#">Privacy Policy</a></li>
+                </ul>
+            </div>
+            <!-- Contact Column -->
+            <div class="footer-col animate-on-scroll fade-right" data-delay="320">
+                <div class="footer-col-title">Contact</div>
+                <ul class="footer-link-list" style="gap:12px;">
+                    <li style="font-size:13px;color:var(--text-secondary);display:flex;align-items:flex-start;gap:8px;">
+                        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="margin-top:2px;flex-shrink:0;color:var(--yellow);"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+                        <span>Hyattsville, Maryland &amp; Virginia, USA</span>
+                    </li>
+                    <li style="font-size:13px;color:var(--text-secondary);display:flex;align-items:center;gap:8px;">
+                        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink:0;color:var(--yellow);"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+                        <a href="mailto:info@pivotaide.com" style="color:var(--text-secondary);text-decoration:none;">info@pivotaide.com</a>
+                    </li>
+                    <li style="font-size:13px;color:var(--text-secondary);display:flex;align-items:center;gap:8px;">
+                        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink:0;color:var(--yellow);"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+                        <span>+1 (571) 470-3754</span>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 Pivot Aide. All rights reserved.</p>
+            <div class="footer-bottom-links">
+                <a href="#">Privacy Policy</a>
+                <a href="#">Terms of Service</a>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<!-- AI CHAT WIDGET -->
+<div class="ai-chat-widget" id="aiChatWidget"><button class="ai-chat-toggle" id="aiChatToggle" aria-label="Chat"><div class="ai-chat-icon" id="aiChatOpenIcon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none"><path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/></svg></div><div class="ai-chat-icon ai-chat-close-icon hidden" id="aiChatCloseIcon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M18 6L6 18M6 6l12 12" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/></svg></div><div class="ai-notif-dot" id="aiNotifDot"></div></button><div class="ai-chat-panel" id="aiChatPanel"><div class="ai-chat-header"><div class="ai-avatar"><img src="logo_image.jpg" alt="Pivot Aide Assistant" style="width: 18px; height: 18px; border-radius: 4px; object-fit: cover; display: block;"></div><div class="ai-header-info"><strong>Pivot Aide Assistant</strong><span class="ai-status"><span class="ai-status-dot"></span>Online</span></div></div><div class="ai-chat-messages" id="aiMessages"><div class="ai-msg ai-msg-bot"><p>Hi! I can answer questions about our services or connect you with our team. How can I help you today?</p></div><div class="ai-quick-replies" id="aiQuickReplies"><button class="ai-qr" data-q="accounting">Accounting</button><button class="ai-qr" data-q="odoo">Odoo ERP</button><button class="ai-qr" data-q="getstarted">Get Started</button></div></div><div class="ai-lead-form" id="aiLeadForm" style="display:none;"><p class="ai-lead-intro">Share your details and we'll connect you with a financial specialist:</p><input type="text" class="ai-lead-input" id="aiLeadName" placeholder="Your Name" /><input type="email" class="ai-lead-input" id="aiLeadEmail" placeholder="Work Email" /><input type="text" class="ai-lead-input" id="aiLeadCompany" placeholder="Company Name" /><button class="btn-primary" style="width:100%;padding:10px;font-size:13px;" id="aiLeadSubmit">Connect with Specialist →</button></div><div class="ai-chat-input-row" id="aiInputRow"><input type="text" class="ai-input" id="aiChatInput" placeholder="Type a message..." maxlength="280"><button class="ai-send" id="aiSendBtn"><svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M22 2L11 13M22 2L15 22 11 13M22 2L2 9l9 4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></button></div></div></div>
+
+<div class="toast" id="toast" role="alert"><div class="toast-icon">✓</div><div class="toast-text"><strong id="toastTitle">Inquiry Submitted</strong><span id="toastMsg">We will be in touch within one business day.</span></div></div>
+
+<script src="main.js"></script>
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+    const form = document.getElementById('accessProgramForm');
+    if (!form) return;
+
+    // Pre-fill signature date field
+    const dateInput = document.getElementById('signatureDate');
+    if (dateInput) {
+        const today = new Date().toISOString().split('T')[0];
+        dateInput.value = today;
+    }
+
+    form.addEventListener('submit', (e) => {
+        e.preventDefault();
+
+        // Validate required text, checkbox and radio inputs
+        let isValid = true;
+        const requiredInputs = form.querySelectorAll('input[required], select[required], textarea[required]');
+        
+        requiredInputs.forEach(input => {
+            if (input.type === 'radio') {
+                const name = input.name;
+                const checked = form.querySelector(`input[name="${name}"]:checked`);
+                const groupContainer = input.closest('div');
+                if (!checked) {
+                    isValid = false;
+                    if (groupContainer) {
+                        groupContainer.style.borderColor = 'var(--red)';
+                        groupContainer.style.boxShadow = '0 0 0 3px rgba(255, 77, 109, 0.1)';
+                    }
+                } else {
+                    if (groupContainer) {
+                        groupContainer.style.borderColor = 'var(--border-light)';
+                        groupContainer.style.boxShadow = 'none';
+                    }
+                }
+            } else if (input.type === 'checkbox') {
+                if (!input.checked) {
+                    isValid = false;
+                    input.classList.add('invalid');
+                    input.classList.remove('valid');
+                    const parentLabel = input.closest('label');
+                    if (parentLabel) {
+                        parentLabel.style.color = 'var(--red)';
+                    }
+                } else {
+                    input.classList.remove('invalid');
+                    input.classList.add('valid');
+                    const parentLabel = input.closest('label');
+                    if (parentLabel) {
+                        parentLabel.style.color = 'var(--text-primary)';
+                    }
+                }
+            } else {
+                if (!input.value.trim()) {
+                    isValid = false;
+                    input.classList.add('invalid');
+                    input.classList.remove('valid');
+                } else {
+                    input.classList.remove('invalid');
+                    input.classList.add('valid');
+                }
+            }
+        });
+
+        if (!isValid) {
+            // Find first invalid input and scroll to it
+            const firstInvalid = form.querySelector('.invalid') || form.querySelector('div[style*="var(--red)"]');
+            if (firstInvalid) {
+                firstInvalid.scrollIntoView({ behavior: 'smooth', block: 'center' });
+            }
+            return;
+        }
+
+        // Disable submit button
+        const submitBtn = document.getElementById('formSubmitBtn');
+        const origText = submitBtn.innerHTML;
+        submitBtn.disabled = true;
+        submitBtn.innerHTML = 'Sending Application...';
+
+        // Simulate API call
+        setTimeout(() => {
+            // Show toast
+            const toast = document.getElementById('toast');
+            const toastTitle = document.getElementById('toastTitle');
+            const toastMsg = document.getElementById('toastMsg');
+            if (toast) {
+                if (toastTitle) toastTitle.textContent = 'Application Submitted';
+                if (toastMsg) toastMsg.textContent = 'Thank you! We will review your application and respond in 1-2 business days.';
+                toast.classList.add('show');
+                setTimeout(() => toast.classList.remove('show'), 5000);
+            }
+
+            // Reset form
+            form.reset();
+            form.querySelectorAll('.valid, .invalid').forEach(input => {
+                input.classList.remove('valid', 'invalid');
+            });
+            form.querySelectorAll('label[style*="var(--red)"]').forEach(label => {
+                label.style.color = 'var(--text-primary)';
+            });
+
+            // Re-fill date
+            if (dateInput) {
+                const today = new Date().toISOString().split('T')[0];
+                dateInput.value = today;
+            }
+
+            // Re-enable button
+            submitBtn.disabled = false;
+            submitBtn.innerHTML = origText;
+        }, 1500);
+    });
+
+    // Remove invalid class on input
+    form.addEventListener('input', (e) => {
+        if (e.target.classList.contains('invalid')) {
+            e.target.classList.remove('invalid');
+        }
+    });
+    form.addEventListener('change', (e) => {
+        if (e.target.type === 'radio') {
+            const groupContainer = e.target.closest('div');
+            if (groupContainer) {
+                groupContainer.style.borderColor = 'var(--border-light)';
+                groupContainer.style.boxShadow = 'none';
+            }
+        } else if (e.target.type === 'checkbox') {
+            const parentLabel = e.target.closest('label');
+            if (parentLabel && e.target.checked) {
+                parentLabel.style.color = 'var(--text-primary)';
+                e.target.classList.remove('invalid');
+            }
+        }
+    });
+});
+</script>
+</body>
+</html>
