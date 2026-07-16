@@ -2414,40 +2414,197 @@ document.addEventListener('DOMContentLoaded', () => {
 /* ═══════════════════════════════════════════════════════════════
    FOUR PILLARS GSAP STAGGER ANIMATION
 ═══════════════════════════════════════════════════════════════ */
-(function PillarsAnimEngine() {
-    var pillarsGrid = document.querySelector('.pillars-grid');
-    if (!pillarsGrid) return;
+(function ProfessionalSlideshowEngine() {
+    var container = document.querySelector('.slideshow-container');
+    var items = document.querySelectorAll('.slide-item');
+    var dots = document.querySelectorAll('.slide-dot');
+    var prevBtn = document.querySelector('.prev-btn');
+    var nextBtn = document.querySelector('.next-btn');
+    
+    if (!container || !items.length) return;
 
-    var pillarCards = document.querySelectorAll('.pillar-card');
-    if (!pillarCards.length) return;
+    var currentIndex = 0;
+    var autoplayInterval = null;
+    var isTransitioning = false;
 
-    gsap.set(pillarCards, { y: 60, opacity: 0, scale: 0.95 });
+    function startAutoplay() {
+        stopAutoplay();
+        autoplayInterval = setInterval(function() {
+            navigate(1);
+        }, 2000);
+    }
 
-    ScrollTrigger.create({
-        trigger: pillarsGrid,
-        start: 'top 78%',
-        once: true,
-        onEnter: function() {
-            gsap.to(pillarCards, {
-                y: 0,
-                opacity: 1,
-                scale: 1,
-                duration: 0.8,
-                stagger: 0.15,
-                ease: 'power3.out'
-            });
-            pillarCards.forEach(function(card, i) {
-                var img = card.querySelector('.pillar-img-wrap');
-                if (img) {
-                    gsap.from(img, { delay: i * 0.15 + 0.35, y: 25, opacity: 0, duration: 0.65, ease: 'power2.out' });
+    function stopAutoplay() {
+        if (autoplayInterval) {
+            clearInterval(autoplayInterval);
+            autoplayInterval = null;
+        }
+    }
+
+    function navigate(direction) {
+        if (isTransitioning) return;
+        isTransitioning = true;
+
+        var prevIndex = currentIndex;
+        currentIndex = (currentIndex + direction + items.length) % items.length;
+
+        // Set classes for fade/slide animation
+        items.forEach(function(item, i) {
+            item.classList.remove('active', 'slide-left');
+            if (i === prevIndex) {
+                // Outgoing slide moves slightly left and fades
+                item.classList.add('slide-left');
+            }
+        });
+
+        // Incoming slide fades in and moves from right
+        var activeItem = items[currentIndex];
+        activeItem.style.transition = 'none';
+        activeItem.style.transform = direction > 0 ? 'translateX(30px)' : 'translateX(-30px)';
+        activeItem.style.opacity = '0';
+        activeItem.style.visibility = 'visible';
+
+        // Force reflow
+        activeItem.offsetHeight;
+
+        activeItem.style.transition = '';
+        activeItem.classList.add('active');
+        activeItem.style.transform = '';
+        activeItem.style.opacity = '';
+
+        // Update Dots
+        dots.forEach(function(dot, i) {
+            if (i === currentIndex) {
+                dot.classList.add('active');
+            } else {
+                dot.classList.remove('active');
+            }
+        });
+
+        setTimeout(function() {
+            items.forEach(function(item, i) {
+                if (i !== currentIndex) {
+                    item.classList.remove('slide-left');
+                    item.style.visibility = 'hidden';
                 }
-                var num = card.querySelector('.pillar-num');
-                if (num) {
-                    gsap.from(num, { delay: i * 0.15 + 0.1, x: -15, opacity: 0, duration: 0.5, ease: 'power2.out' });
+            });
+            isTransitioning = false;
+        }, 700);
+    }
+
+    function goToSlide(index) {
+        if (index === currentIndex || isTransitioning) return;
+        var direction = index > currentIndex ? 1 : -1;
+        
+        isTransitioning = true;
+
+        var prevIndex = currentIndex;
+        currentIndex = index;
+
+        items.forEach(function(item, i) {
+            item.classList.remove('active', 'slide-left');
+            if (i === prevIndex) {
+                item.classList.add('slide-left');
+            }
+        });
+
+        var activeItem = items[currentIndex];
+        activeItem.style.transition = 'none';
+        activeItem.style.transform = direction > 0 ? 'translateX(30px)' : 'translateX(-30px)';
+        activeItem.style.opacity = '0';
+        activeItem.style.visibility = 'visible';
+
+        activeItem.offsetHeight;
+
+        activeItem.style.transition = '';
+        activeItem.classList.add('active');
+        activeItem.style.transform = '';
+        activeItem.style.opacity = '';
+
+        dots.forEach(function(dot, i) {
+            if (i === currentIndex) {
+                dot.classList.add('active');
+            } else {
+                dot.classList.remove('active');
+            }
+        });
+
+        setTimeout(function() {
+            items.forEach(function(item, i) {
+                if (i !== currentIndex) {
+                    item.classList.remove('slide-left');
+                    item.style.visibility = 'hidden';
                 }
             });
+            isTransitioning = false;
+        }, 700);
+    }
+
+    // Manual controls: Prev/Next
+    if (prevBtn) {
+        prevBtn.addEventListener('click', function() {
+            navigate(-1);
+            startAutoplay(); // restart timer
+        });
+    }
+    if (nextBtn) {
+        nextBtn.addEventListener('click', function() {
+            navigate(1);
+            startAutoplay(); // restart timer
+        });
+    }
+
+    // Dots Navigation
+    dots.forEach(function(dot) {
+        dot.addEventListener('click', function() {
+            var index = parseInt(dot.getAttribute('data-slide'));
+            goToSlide(index);
+            startAutoplay(); // restart timer
+        });
+    });
+
+    // Hover pauses autoplay
+    container.addEventListener('mouseenter', stopAutoplay);
+    container.addEventListener('mouseleave', startAutoplay);
+
+    // Swipe controls for mobile devices
+    var touchStartX = 0;
+    var touchEndX = 0;
+
+    container.addEventListener('touchstart', function(e) {
+        touchStartX = e.changedTouches[0].screenX;
+    }, { passive: true });
+
+    container.addEventListener('touchend', function(e) {
+        touchEndX = e.changedTouches[0].screenX;
+        handleSwipe();
+    }, { passive: true });
+
+    function handleSwipe() {
+        var swipeDistance = touchEndX - touchStartX;
+        if (Math.abs(swipeDistance) > 50) {
+            if (swipeDistance > 0) {
+                // Swipe right -> Prev
+                navigate(-1);
+            } else {
+                // Swipe left -> Next
+                navigate(1);
+            }
+            startAutoplay(); // restart timer
+        }
+    }
+
+    // Init slideshow states
+    items.forEach(function(item, i) {
+        if (i === 0) {
+            item.classList.add('active');
+            item.style.visibility = 'visible';
+        } else {
+            item.style.visibility = 'hidden';
         }
     });
+
+    startAutoplay();
 })();
 
 /* ═══════════════════════════════════════════════════════════════
